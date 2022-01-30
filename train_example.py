@@ -1,5 +1,6 @@
 from keras.callbacks import ModelCheckpoint, TensorBoard
-from keras.optimizers import Adam
+from keras.optimizers import adam_v2
+adam = adam_v2.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 
 from dl_segmenter import get_or_create, save_config
 from dl_segmenter.custom.callbacks import LRFinder, SGDRScheduler, WatchScheduler, SingleModelCK, LRSchedulerPerStep
