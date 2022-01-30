@@ -8,7 +8,9 @@ from multiprocessing import Lock
 import numpy as np
 from keras import Input, Model
 from keras.layers import Embedding, Bidirectional, Dense, Dropout, GRU, LSTM
-from keras.optimizers import Adam
+from keras.optimizers import adam_v2
+adam = adam_v2.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import multi_gpu_model
 from keras_contrib.layers import CRF
